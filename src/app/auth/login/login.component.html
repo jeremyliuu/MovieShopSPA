@@ -1,0 +1,38 @@
+<h3> User Login </h3>
+<!-- the form tag ia very powerful, but Angular makes it even more powerful my adding its own directives -->
+<!-- instaed of using plain HTML forms, when we add any of these Template Driven directives, we are angularizing that form so that angular 
+will control that form and helps developers in creating forms easily-->
+<!-- Template reference Variable -->
+<!-- Two way binding -->
+<!-- ngModel --> 
+<!--  [(ngModel)]  Banana in  a box -->
+
+<form (ngSubmit)="login()"
+      #loginForm="ngForm">
+  <!-- <div 
+       class="alert alert-danger">Invalid username and/or password.</div> -->
+  <div class="form-group">
+    <label for="lblemail">Email address</label>
+    <input type="email"
+           class="form-control"
+           name="userName"
+           [(ngModel)]="userLogin.email"
+           id="email"
+           aria-describedby="emailHelp"
+           placeholder="Enter email">
+    <small id="emailHelp"
+           class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="lblPassword">Password</label>
+    <input type="password"
+           class="form-control"
+           [(ngModel)]="userLogin.password"
+           name="password"
+           id="password"
+           placeholder="Password">
+  </div>
+  <input type="submit"
+         class="btn btn-primary"
+         value="Submit" />
+</form>
